@@ -14,7 +14,6 @@
         <p>Hej, vi er en 8. semesters software-gruppe, som  dette semester undersøger muligheden for at hjælpe danskere der har arabisk som modersmål med dansk udtale.<br>
             Derfor har vi brug for din hjælp til at indsamle data med korrekt udtale.<br>
             Optagelserne er selvfølgelig anonyme :)</p>
-
         <div class="row">
             <div class="col">
                 <h3>Instruktioner</h3>
@@ -23,7 +22,6 @@
                     <li>2. Sig ordet <strong>"pære"</strong></li>
                     <li>3. Tryk på "upload" under lydfilen</li>
                 </ul>
-
                 <div id="controls">
                     <button id="recordButton">Optag</button>
                     <button id="stopButton" disabled>Stop</button>
@@ -40,7 +38,6 @@
                 <ol id="recordingsList"></ol>
             </div>
         </div>
-
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="/js/recorder.js"></script>
