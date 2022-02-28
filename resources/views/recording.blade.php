@@ -10,26 +10,25 @@
 </head>
 <body>
     <div class="container">
-        <h1>Data indsamling</h1>
-        <p>Hej, vi er en 8. semesters software gruppe, som undersøger mulighed for at hjælpe udlændinge med at udtale dansk korrekt.<br>
-            Derfor har vi brug for hjælp til at indsamle data fra jer der kan snakke dansk flydende.<br>
+        <h1>Dataindsamling</h1>
+        <p>Hej, vi er en 8. semesters software-gruppe, som  dette semester undersøger muligheden for at hjælpe danskere der har arabisk som modersmål med dansk udtale.<br>
+            Derfor har vi brug for din hjælp til at indsamle data med korrekt udtale.<br>
             Optagelserne er selvfølgelig anonyme :)</p>
 
         <div class="row">
             <div class="col">
                 <h3>Instruktioner</h3>
                 <ul>
-                    <li>1. Tryk på optag</li>
-                    <li>2. Sig ordet pære</li>
-                    <li>3. Stop optagelse</li>
-                    <li>4. Tryk på upload under lydfilen</li>
+                    <li>1. Tryk på "optag"</li>
+                    <li>2. Sig ordet <strong>"pære"</strong></li>
+                    <li>3. Tryk på "upload" under lydfilen</li>
                 </ul>
 
                 <div id="controls">
                     <button id="recordButton">Optag</button>
                     <button id="stopButton" disabled>Stop</button>
                 </div>
-                <p><small>Optagelsen stoppes automatisk efter 2 sekunder.</small></p>
+                <p><small>Optagelsen stoppes automatisk efter 2 sekunder. Du er må gerne uploade flere optagelser!</small></p>
             </div>
             <div class="col">
                 <div id="message-success" class="alert alert-success" role="alert" style="display: none;">
