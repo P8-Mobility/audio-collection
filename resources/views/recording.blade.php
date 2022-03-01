@@ -11,9 +11,12 @@
 <body>
     <div class="container">
         <h1>Dataindsamling</h1>
-        <p>Hej, vi er en 8. semesters software-gruppe, som  dette semester undersøger muligheden for at hjælpe danskere der har arabisk som modersmål med dansk udtale.<br>
-            Derfor har vi brug for din hjælp til at indsamle data med korrekt udtale.<br>
-            Optagelserne er selvfølgelig anonyme :)</p>
+        <p>Hej, vi er en 8. semesters software-gruppe, som i dette semester undersøger muligheden for at hjælpe danskere der har arabisk som modersmål med dansk udtale.
+            Derfor har vi brug for din hjælp til at indsamle data med korrekt udtale.</p>
+
+        <p>Alle optagelser er selvfølgelig anonyme. &#x1F642;</p>
+
+        <p>Vi vil sætte pris på, at du kun optager det adspurgte for at lette vores arbejdsbyrde. På forhånd tak!</p>
         <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12">
                 <h3>Instruktioner</h3>
@@ -21,12 +24,13 @@
                     <li>1. Tryk på "optag"</li>
                     <li>2. Sig ordet <strong>"pære"</strong> én gang</li>
                     <li>3. Tryk på "gem" under lydfilen</li>
+                    <li>4. Du må meget gerne lave flere optagelser &#x1F601;</li>
                 </ul>
                 <div id="controls">
                     <button id="recordButton">Optag</button>
                     <!--<button id="stopButton" disabled>Stop</button>-->
                 </div>
-                <p><small>Optagelsen stoppes automatisk efter 2 sekunder. Du er må gerne gemme flere optagelser!</small></p>
+                <p><small>Optagelsen stoppes automatisk efter 2 sekunder.</small></p>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
                 <div id="message-success" class="alert alert-success" role="alert" style="display: none;">
