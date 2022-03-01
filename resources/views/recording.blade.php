@@ -26,7 +26,7 @@
                     <button id="recordButton">Optag</button>
                     <button id="stopButton" disabled>Stop</button>
                 </div>
-                <p><small>Optagelsen stoppes automatisk efter 2 sekunder. Du er må gerne upload flere optagelser!</small></p>
+                <p><small>Optagelsen stoppes automatisk efter 2 sekunder. Du er må gerne oploade flere optagelser!</small></p>
             </div>
             <div class="col">
                 <div id="message-success" class="alert alert-success" role="alert" style="display: none;">
