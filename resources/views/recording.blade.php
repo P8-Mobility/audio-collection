@@ -19,7 +19,7 @@
                 <h3>Instruktioner</h3>
                 <ul>
                     <li>1. Tryk på "optag"</li>
-                    <li>2. Sig ordet <strong>"pære"</strong></li>
+                    <li>2. Sig ordet <strong>"pære"</strong> én gang</li>
                     <li>3. Tryk på "upload" under lydfilen</li>
                 </ul>
                 <div id="controls">
