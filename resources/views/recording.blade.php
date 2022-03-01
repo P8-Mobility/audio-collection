@@ -24,7 +24,7 @@
                 </ul>
                 <div id="controls">
                     <button id="recordButton">Optag</button>
-                    <button id="stopButton" disabled>Stop</button>
+                    <!--<button id="stopButton" disabled>Stop</button>-->
                 </div>
                 <p><small>Optagelsen stoppes automatisk efter 2 sekunder. Du er må gerne oploade flere optagelser!</small></p>
             </div>

@@ -10,15 +10,23 @@ var AudioContext = window.AudioContext || window.webkitAudioContext;
 var audioContext //audio context to help us record
 
 var recordButton = document.getElementById("recordButton");
-var stopButton = document.getElementById("stopButton");
+//var stopButton = document.getElementById("stopButton");
 var messageSuccess = document.getElementById("message-success");
 var messageWarning = document.getElementById("message-warning");
 
 //add events to those 2 buttons
-recordButton.addEventListener("click", startRecording);
-stopButton.addEventListener("click", stopRecording);
+recordButton.addEventListener("click", startRecordingClick);
+//stopButton.addEventListener("click", stopRecording);
 
 var recordingStopInterval = null;
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function startRecordingClick(){
+    sleep(10).then(() => { startRecording(); });
+}
 
 function startRecording() {
 	console.log("recordButton clicked");
@@ -35,7 +43,7 @@ function startRecording() {
 	*/
 
 	recordButton.disabled = true;
-	stopButton.disabled = false;
+	//stopButton.disabled = false;
 
 	/*
     	We're using the standard promise based getUserMedia()
@@ -82,16 +90,16 @@ function startRecording() {
 	}).catch(function(err) {
 	  	//enable the record button if getUserMedia() fails
     	recordButton.disabled = false;
-    	stopButton.disabled = true;
+    	//stopButton.disabled = true;
 	});
 }
 
 function stopRecording() {
-	console.log("stopButton clicked");
+	//console.log("stopButton clicked");
 	clearInterval(recordingStopInterval);
 
 	//disable the stop button, enable the record too allow for new recordings
-	stopButton.disabled = true;
+	//stopButton.disabled = true;
 	recordButton.disabled = false;
 
 	//tell the recorder to stop the recording
