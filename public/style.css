@@ -43,7 +43,7 @@ red {
   display: flex;
   margin-top: 2rem;
   max-width: 28em;
-} 
+}
 
 button {
   flex-grow: 1;
@@ -101,6 +101,6 @@ li {
   font-size: 80%;
 }
 
-#recordingsList{
-	max-width: 28em;
+ol {
+    padding-left: 0px;
 }

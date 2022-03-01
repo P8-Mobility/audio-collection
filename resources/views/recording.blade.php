@@ -23,7 +23,7 @@
                     <li>3. Tryk på "upload" under lydfilen</li>
                 </ul>
                 <div id="controls">
-                    <button id="recordButton" class="btn btn-danger">Optag</button>
+                    <button id="recordButton">Optag</button>
                     <!--<button id="stopButton" disabled>Stop</button>-->
                 </div>
                 <p><small>Optagelsen stoppes automatisk efter 2 sekunder. Du er må gerne oploade flere optagelser!</small></p>
