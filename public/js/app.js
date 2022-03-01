@@ -131,7 +131,7 @@ function createDownloadLink(blob) {
 	//upload link
 	var upload = document.createElement('a');
 	upload.href="#";
-	upload.innerHTML = "Upload";
+	upload.innerHTML = "Gem";
     upload.classList.add("btn");
     upload.classList.add("btn-success");
     upload.style.color = "white";
