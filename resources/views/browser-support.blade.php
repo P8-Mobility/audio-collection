@@ -12,15 +12,15 @@
 <div class="container">
     <h1>Dataindsamling</h1>
 
-    <p>Vi understøtter desværre kun følgende browsere på nuværende tidspunkt:</p>
+    <p>Vi understøtter desværre ikke din browser på nuværende tidspunkt. Vi understøtter følgende browsere:</p>
 
     <ul>
-        <li>Google Chrome</li>
-        <li>Edge</li>
-        <li>Safari</li>
+        <li>- Google Chrome</li>
+        <li>- Edge</li>
+        <li>- Safari</li>
     </ul>
 
-    <p>Har du adgang til en af de ovenstående browser bedre vi dig benytte denne i stedet. &#x1F601;</p>
+    <p>Har du adgang til en af de ovenstående browser beder vi dig benytte denne i stedet. &#x1F601;</p>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </body>
