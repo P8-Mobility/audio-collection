@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Jenssegers\Agent\Agent;
 
 class RecorderController extends Controller
 {
@@ -12,6 +13,12 @@ class RecorderController extends Controller
         if ($request->session()->missing('token'))
             $request->session()->put('token', Str::random(10));
 
-        return view('recording');
+        $agent = new Agent();
+        $browser = $agent->browser();
+
+        if(in_array($browser, ['Chrome', 'Edge', 'Safari']))
+            return view('recording');
+
+        return view('browser-support');
     }
 }
