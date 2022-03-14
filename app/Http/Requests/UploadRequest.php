@@ -24,7 +24,8 @@ class UploadRequest extends FormRequest
     public function rules()
     {
         return [
-            'audio_data' => 'file|mimes:wav|max:300'
+            'audio_data' => 'file|mimes:wav|max:300',
+            'word' => 'required'
         ];
     }
 }

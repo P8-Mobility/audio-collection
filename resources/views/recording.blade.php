@@ -26,6 +26,16 @@
                     <li>3. Tryk på "gem" under lydfilen</li>
                     <li>4. Du må meget gerne lave flere optagelser &#x1F601;</li>
                 </ul>
+
+                @if($custom)
+                    <div class="mb-3">
+                        <label for="word" class="form-label">Word or sentence</label>
+                        <input type="text" class="form-control" id="word" name="word">
+                    </div>
+                @else
+                    <input type="hidden" id="word" name="word" value="pære">
+                @endif
+
                 <div id="controls">
                     <button id="recordButton">Optag</button>
                     <!--<button id="stopButton" disabled>Stop</button>-->

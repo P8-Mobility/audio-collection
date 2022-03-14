@@ -147,6 +147,7 @@ function createDownloadLink(blob) {
 
 		var fd=new FormData();
 		fd.append("audio_data",blob, filename);
+        fd.append("word", $('#word').val())
 		xhr.open("POST","/store",true);
         xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
 		xhr.send(fd);
