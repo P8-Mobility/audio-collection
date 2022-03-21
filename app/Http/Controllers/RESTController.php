@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Jenssegers\Agent\Agent;
 use ZipArchive;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -47,9 +46,7 @@ class RESTController extends Controller
                                     continue;
                             }
                         }
-
-                        var_dump(basename($file));
-
+                        
                         $zip->addFile(Storage::path($file), basename($file));
                     }
                 }
@@ -58,12 +55,10 @@ class RESTController extends Controller
             $fileCount = $zip->count();
             $zip->close();
 
-            var_dump($fileCount);
+            if($fileCount > 0)
+                return response()->download(public_path($filename));
 
-//            if($fileCount > 0)
-//                return response()->download(public_path($filename));
-//
-//            abort(204, "Nothing to download!");
+            abort(204, "Nothing to download!");
         }
     }
 }
