@@ -38,7 +38,7 @@ class RESTController extends Controller
             if($fileCount > 0)
                 return response()->download(public_path($filename));
 
-            echo "Nothing to download!";
+            abort(204, "Nothing to download!");
         }
     }
 }
