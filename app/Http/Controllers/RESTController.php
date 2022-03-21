@@ -7,23 +7,31 @@ use Illuminate\Support\Str;
 use Jenssegers\Agent\Agent;
 use ZipArchive;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class RESTController extends Controller
 {
     public function download(Request $request)
     {
-        $from = $request->get("from", null);
+        $from = $request->input("from", null);
+        $from_date = null;
+
+        if(!is_null($from))
+            $from_date = intval(date('Ymd', strtotime($from)));
 
         $zip = new ZipArchive();
         $fileCount = 0;
         $filename = "download.zip";
+        File::delete(public_path($filename));
+
         $directories = Storage::directories("recordings");
 
         if ($zip->open(public_path($filename), ZipArchive::CREATE) === TRUE) {
             foreach ($directories AS $directory){
                 $dirname = basename($directory);
+                $dir_date = intval(date('Ymd', strtotime($dirname)));
 
-                if(is_null($from) || $dirname >= $from){
+                if(is_null($from) || $dir_date >= $from_date){
                     $files = Storage::files($directory);
 
                     foreach ($files AS $file){
