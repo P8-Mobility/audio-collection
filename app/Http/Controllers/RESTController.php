@@ -9,11 +9,14 @@ use ZipArchive;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
+
 class RESTController extends Controller
 {
     public function download(Request $request)
     {
         $from = $request->input("from", null);
+        $word = $request->input("word", null);
+        $exclude = filter_var($request->input("exclude", 'false'), FILTER_VALIDATE_BOOLEAN);;
         $from_date = null;
 
         if(!is_null($from))
@@ -35,6 +38,18 @@ class RESTController extends Controller
                     $files = Storage::files($directory);
 
                     foreach ($files AS $file){
+                        if(!is_null($word)){
+                            if(Str::endsWith($file, $word.".wav")){
+                                if($exclude)
+                                    continue;
+                            }else{
+                                if(!$exclude)
+                                    continue;
+                            }
+                        }
+
+                        var_dump(basename($file));
+
                         $zip->addFile(Storage::path($file), basename($file));
                     }
                 }
@@ -43,10 +58,12 @@ class RESTController extends Controller
             $fileCount = $zip->count();
             $zip->close();
 
-            if($fileCount > 0)
-                return response()->download(public_path($filename));
+            var_dump($fileCount);
 
-            abort(204, "Nothing to download!");
+//            if($fileCount > 0)
+//                return response()->download(public_path($filename));
+//
+//            abort(204, "Nothing to download!");
         }
     }
 }
