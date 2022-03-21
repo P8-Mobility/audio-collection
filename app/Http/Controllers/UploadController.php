@@ -14,7 +14,7 @@ class UploadController extends Controller
         $word = Str::slug($request->get("word"), '_');
 
         if ($request->hasFile('audio_data')) {
-            $request->audio_data->storeAs('recordings', date('Ymd-His', time())."-".$token."-".$word.".wav");
+            $request->audio_data->storeAs('recordings/'.date('Y-m-d', time()), date('Ymd-His', time())."-".$token."-".$word.".wav");
         }
     }
 }
