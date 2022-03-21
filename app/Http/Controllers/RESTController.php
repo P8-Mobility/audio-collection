@@ -15,6 +15,7 @@ class RESTController extends Controller
         $from = $request->get("from", null);
 
         $zip = new ZipArchive();
+        $fileCount = 0;
         $filename = "download.zip";
         $directories = Storage::directories("recordings");
 
@@ -31,9 +32,13 @@ class RESTController extends Controller
                 }
             }
 
+            $fileCount = $zip->count();
             $zip->close();
 
-            return response()->download(public_path($filename));
+            if($fileCount > 0)
+                return response()->download(public_path($filename));
+
+            echo "Nothing to download!";
         }
     }
 }
