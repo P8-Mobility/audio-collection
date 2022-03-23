@@ -128,8 +128,9 @@ function predictRecording(blob) {
     };
 
     var fd=new FormData();
-    fd.append("file", blob, filename);
+    fd.append("wav_file", blob, filename);
     fd.append("word", $('#word').val())
-    xhr.open("POST","http://100.75.4.76:8080/predict",true);
+    xhr.open("POST","/predict",true);
+    xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
     xhr.send(fd);
 }

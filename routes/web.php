@@ -19,3 +19,4 @@ use App\Http\Controllers\PredictController;
 Route::get('/', [RecorderController::class, 'index']);
 Route::post('/store', [UploadController::class, 'index']);
 Route::get('/predict', [PredictController::class, 'index']);
+Route::post('/predict', [PredictController::class, 'predict']);
