@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\RecorderController;
+use App\Http\Controllers\PredictController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,4 @@ use App\Http\Controllers\RecorderController;
 
 Route::get('/', [RecorderController::class, 'index']);
 Route::post('/store', [UploadController::class, 'index']);
+Route::get('/predict', [PredictController::class, 'index']);

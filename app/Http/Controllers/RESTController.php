@@ -46,7 +46,7 @@ class RESTController extends Controller
                                     continue;
                             }
                         }
-                        
+
                         $zip->addFile(Storage::path($file), basename($file));
                     }
                 }
