@@ -26,7 +26,7 @@ class PredictController extends Controller
     public function predict(Request $request)
     {
         if($request->hasFile("wav_file")){
-            $wav_file = curl_file_create($request->wav_file->path());
+            $wav_file = new CURLFile($request->wav_file->path(),'audio/wav');
 
             $headers = array(
                 'Content-type: multipart/form-data'
