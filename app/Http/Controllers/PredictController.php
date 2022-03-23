@@ -29,7 +29,7 @@ class PredictController extends Controller
         if($request->hasFile("wav_file")){
             $name = "predict-".time().".wav";
             $path = $request->wav_file->storeAs('predictions', $name);
-            $wav_file = curl_file_create($path);
+            $wav_file = new CURLFile($path);
 
             $headers = array(
                 'Content-type: multipart/form-data'
