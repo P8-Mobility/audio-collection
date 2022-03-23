@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Jenssegers\Agent\Agent;
+use Illuminate\Support\Facades\Log;
 
 class PredictController extends Controller
 {
@@ -29,7 +30,8 @@ class PredictController extends Controller
         if($request->hasFile("wav_file")){
             $name = "predict-".time().".wav";
             $path = $request->wav_file->storeAs('predictions', $name);
-            $wav_file = new CURLFile($path);
+            Log::debug($path);
+            $wav_file = new CURLFile($path, '', $name);
 
             $headers = array(
                 'Content-type: multipart/form-data'
