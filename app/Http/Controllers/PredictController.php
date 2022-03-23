@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use CURLFile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Jenssegers\Agent\Agent;
 
@@ -26,7 +27,9 @@ class PredictController extends Controller
     public function predict(Request $request)
     {
         if($request->hasFile("wav_file")){
-            $wav_file = new CURLFile($request->wav_file->path(),'audio/wav', "recorded-file.wav");
+            $name = "predict-".time().".wav";
+            $path = $request->wav_file->storeAs('predictions', $name);
+            $wav_file = new CURLFile($path,'audio/wav', $name);
 
             $headers = array(
                 'Content-type: multipart/form-data'
@@ -52,6 +55,8 @@ class PredictController extends Controller
 
             $response = curl_exec($curl);
             curl_close($curl);
+
+            Storage::delete($path);
 
             return $response;
         }
