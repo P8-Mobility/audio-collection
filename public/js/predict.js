@@ -119,6 +119,8 @@ function predictRecording(blob) {
     xhr.onload=function(e) {
         if(this.readyState === 4 && this.status === 200) {
             console.log(this.responseText);
+            console.log(this.response);
+            console.log(this);
 
             //var json = JSON.parse(this.responseText);
             //$('#result').html(json['result']);
