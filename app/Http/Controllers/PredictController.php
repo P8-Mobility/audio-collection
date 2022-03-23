@@ -38,7 +38,7 @@ class PredictController extends Controller
 
             $curl = curl_init();
             curl_setopt_array($curl, array(
-                CURLOPT_URL => "http://100.78.29.80:8080/predict",
+                CURLOPT_URL => "http://100.75.4.76:8080/predict",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_TIMEOUT => 30,
                 CURLOPT_POST => true,
