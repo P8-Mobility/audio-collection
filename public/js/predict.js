@@ -129,7 +129,7 @@ function predictRecording(blob) {
 
     var fd=new FormData();
     fd.append("wav_file", blob, filename);
-    fd.append("word", $('#word').val())
+    fd.append("word", $('#word').val());
     xhr.open("POST","/predict",true);
     xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
     xhr.send(fd);
