@@ -122,12 +122,15 @@ function predictRecording(blob) {
             console.log(this.response);
             console.log(this);
 
+            var json = JSON.parse(this.responseText);
+
+            $('#phone').text(json['status']);
             //var json = JSON.parse(this.responseText);
             //$('#result').html(json['result']);
         }
 
         if(this.readyState === 3){
-            $('#result').html("Predicting...");
+            $('#phone').text("Error...");
         }
     };
 

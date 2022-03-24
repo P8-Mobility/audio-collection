@@ -24,7 +24,9 @@
             </div>
             <p><small>Optagelsen stoppes automatisk efter 2 sekunder.</small></p>
 
-            <div id="result"></div>
+            <div id="result">
+                <span id="phone"></span>
+            </div>
         </div>
     </div>
 </div>

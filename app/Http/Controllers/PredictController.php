@@ -31,7 +31,7 @@ class PredictController extends Controller
             $name = "predict-".time().".wav";
             $path = $request->wav_file->storeAs('predictions', $name);
             Log::debug($path);
-            $wav_file = new CURLFile(Storage::path($path), '', $name);
+            $wav_file = new CURLFile(Storage::path($path), 'audio/wav', $name);
 
             $headers = array(
                 'Content-type: multipart/form-data'
