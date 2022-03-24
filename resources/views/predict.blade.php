@@ -10,21 +10,17 @@
 </head>
 <body>
 <div class="container">
-    <h1>Afprøv model</h1>
-    <p>Hej, vi er en 8. semesters software-gruppe, som i dette semester undersøger muligheden for at hjælpe danskere der har arabisk som modersmål med dansk udtale.
-        Derfor har vi brug for din hjælp til at indsamle data med korrekt udtale.</p>
-
-    <p>Alle optagelser er selvfølgelig anonyme. &#x1F642;</p>
-
-    <p>Vi vil sætte pris på, at du kun optager det adspurgte for at lette vores arbejdsbyrde. På forhånd tak!</p>
+    <h1>Test the model</h1>
     <div class="row">
         <div class="col-md-6 col-sm-12 col-xs-12">
             <div id="controls">
-                <button id="recordButton">Optag</button>
+                <button id="recordButton">Record</button>
             </div>
-            <p><small>Optagelsen stoppes automatisk efter 2 sekunder.</small></p>
-
+            <p><small>Recording stops automatically after 2 seconds.</small></p>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
             <div id="result">
+                <h3>The model predicted:</h3>
                 <span id="phone"></span>
             </div>
         </div>
