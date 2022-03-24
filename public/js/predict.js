@@ -124,7 +124,8 @@ function predictRecording(blob) {
 
             var json = JSON.parse(this.responseText);
 
-            $('#phone').text(json['status']);
+            if(json['status'] === 'OK')
+                $('#phone').text(json['result']);
             //var json = JSON.parse(this.responseText);
             //$('#result').html(json['result']);
         }
