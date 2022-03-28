@@ -22,7 +22,7 @@
                 <h3>Instruktioner</h3>
                 <ul>
                     <li>1. Tryk på "optag"</li>
-                    <li>2. Sig ordet <strong>"pære"</strong> én gang</li>
+                    <li>2. Sig ordet <strong>"{{ Str::replace('ae', 'æ', $word) }}"</strong> én gang</li>
                     <li>3. Tryk på "gem" under lydfilen</li>
                     <li>4. Du må meget gerne lave flere optagelser &#x1F601;</li>
                 </ul>
@@ -33,7 +33,7 @@
                         <input type="text" class="form-control" id="word" name="word">
                     </div>
                 @else
-                    <input type="hidden" id="word" name="word" value="pære">
+                    <input type="hidden" id="word" name="word" value="{{ $word }}">
                 @endif
 
                 <div id="controls">
