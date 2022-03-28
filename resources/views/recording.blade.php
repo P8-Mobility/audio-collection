@@ -29,7 +29,7 @@
 
                 @if($custom)
                     <div class="mb-3">
-                        <label for="word" class="form-label">Word or sentence</label>
+                        <label for="word" class="form-label">Ord eller sætning</label>
                         <input type="text" class="form-control" id="word" name="word">
                     </div>
                 @else
