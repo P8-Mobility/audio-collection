@@ -27,18 +27,18 @@ class PredictController extends Controller
 
     public function predict(Request $request)
     {
-        if($request->hasFile("wav_file")){
-            $name = "predict-".time().".wav";
+        if($request->hasFile("file")){
+            $name = time().$request->file('file')->getFilename();
             $path = $request->wav_file->storeAs('predictions', $name);
             Log::debug($path);
-            $wav_file = new CURLFile(Storage::path($path), 'audio/wav', $name);
+            $the_file = new CURLFile(Storage::path($path));
 
             $headers = array(
                 'Content-type: multipart/form-data'
             );
 
             $data = array(
-                "file" => $wav_file
+                "file" => $the_file
             );
 
             $curl = curl_init();
