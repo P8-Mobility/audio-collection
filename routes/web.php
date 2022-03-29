@@ -16,7 +16,8 @@ use App\Http\Controllers\PredictController;
 |
 */
 
-Route::get('/{word?}', [RecorderController::class, 'index']);
 Route::post('/store', [UploadController::class, 'index']);
 Route::get('/predict', [PredictController::class, 'index']);
 Route::post('/predict', [PredictController::class, 'predict']);
+Route::get('/{word?}', [RecorderController::class, 'index']);
+
