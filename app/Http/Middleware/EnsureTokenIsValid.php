@@ -19,5 +19,7 @@ class EnsureTokenIsValid
         if($request->bearerToken() == env('API_TOKEN', '')){
             return $next($request);
         }
+
+        abort(401);
     }
 }
