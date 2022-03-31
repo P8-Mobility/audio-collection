@@ -101,7 +101,7 @@ class RESTController extends Controller
             $response = curl_exec($curl);
             curl_close($curl);
 
-            //Storage::delete($path);
+            Storage::delete($path);
 
             return $response;
         }

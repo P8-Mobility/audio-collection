@@ -29,8 +29,12 @@ class PredictController extends Controller
     {
         if($request->hasFile("mediafile")){
             $name = time().$request->file('mediafile')->getFilename();
+            $extension = $request->mediafile->extension();
+
+            if(!in_array($extension, ['wav', 'mp4']))
+                abort(500, "File type not allowed...");
+
             $path = $request->mediafile->storeAs('predictions', $name);
-            Log::debug($path);
             $the_file = new CURLFile(Storage::path($path));
 
             $headers = array(
@@ -58,7 +62,7 @@ class PredictController extends Controller
             $response = curl_exec($curl);
             curl_close($curl);
 
-            //Storage::delete($path);
+            Storage::delete($path);
 
             return $response;
         }
