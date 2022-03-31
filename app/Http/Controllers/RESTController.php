@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use CURLFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
