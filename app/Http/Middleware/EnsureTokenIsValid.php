@@ -20,6 +20,6 @@ class EnsureTokenIsValid
             return $next($request);
         }
 
-        abort(401);
+        abort(401, "Unauthorized");
     }
 }
