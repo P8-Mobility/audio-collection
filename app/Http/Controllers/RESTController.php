@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use ZipArchive;
 use Illuminate\Support\Facades\Storage;
@@ -60,5 +61,45 @@ class RESTController extends Controller
 
             abort(204, "Nothing to download!");
         }
+    }
+
+    public function predict(Request $request)
+    {
+        if($request->hasFile("mediafile")){
+            $name = time().$request->file('mediafile')->getFilename();
+            $path = $request->mediafile->storeAs('predictions', $name);
+            $the_file = new CURLFile(Storage::path($path));
+
+            $headers = array(
+                'Content-type: multipart/form-data'
+            );
+
+            $data = array(
+                "file" => $the_file
+            );
+
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => "http://92.205.62.104:8080/predict",
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_POST => true,
+                CURLOPT_POSTFIELDS => $data
+            ));
+
+            // Set Header
+            if (!empty($headers)) {
+                curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+            }
+
+            $response = curl_exec($curl);
+            curl_close($curl);
+
+            //Storage::delete($path);
+
+            return $response;
+        }
+
+        return "No file...";
     }
 }
