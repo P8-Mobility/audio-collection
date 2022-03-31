@@ -71,7 +71,7 @@ class RESTController extends Controller
             $extension = $request->mediafile->extension();
 
             if(!in_array($extension, ['wav', 'mp4']))
-                return response()->json(["status" => "FAILED", "message" => "File type not allowed... ".$extension]);
+                return response()->json(["status" => "FAILED", "message" => "File type not allowed... (Got: ".$extension.")"]);
 
             $path = $request->mediafile->storeAs('predictions', $name);
             $the_file = new CURLFile(Storage::path($path));
