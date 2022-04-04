@@ -46,7 +46,7 @@ class RESTController extends Controller
                         Log::debug(json_encode($word));
 
                         if(count($word) > 0){
-                            $fileWord = explode("-", $baseFileName)[3];
+                            $fileWord = substr(explode("-", $baseFileName)[3], 0, -4);
 
                             if(!in_array($fileWord, $word))
                                 continue;
