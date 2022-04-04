@@ -42,6 +42,8 @@ class RESTController extends Controller
 
                     foreach ($files AS $file){
                         $baseFileName = basename($file);
+                        Log::debug($baseFileName);
+                        Log::debug(json_encode($word));
 
                         if(count($word) > 0){
                             $fileWord = explode("-", $baseFileName)[3];
