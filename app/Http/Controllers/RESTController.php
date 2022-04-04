@@ -16,9 +16,11 @@ class RESTController extends Controller
     public function download(Request $request)
     {
         $from = $request->input("from", null);
-        $word = $request->input("word", null);
-        $exclude = filter_var($request->input("exclude", 'false'), FILTER_VALIDATE_BOOLEAN);;
+        $word = $request->input("word", array());
         $from_date = null;
+
+        if(!is_array($word))
+            $word = explode(",", $word);
 
         if(!is_null($from))
             $from_date = intval(date('Ymd', strtotime($from)));
@@ -39,17 +41,16 @@ class RESTController extends Controller
                     $files = Storage::files($directory);
 
                     foreach ($files AS $file){
-                        if(!is_null($word)){
-                            if(Str::endsWith($file, $word.".wav")){
-                                if($exclude)
-                                    continue;
-                            }else{
-                                if(!$exclude)
-                                    continue;
-                            }
+                        $baseFileName = basename($file);
+
+                        if(count($word) > 0){
+                            $fileWord = explode("-", $baseFileName)[3];
+
+                            if(!in_array($fileWord, $word))
+                                continue;
                         }
 
-                        $zip->addFile(Storage::path($file), basename($file));
+                        $zip->addFile(Storage::path($file), $baseFileName);
                     }
                 }
             }
