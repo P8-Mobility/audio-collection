@@ -34,7 +34,7 @@ class PredictController extends Controller
             if(!in_array($extension, ['wav', 'mp4']))
                 abort(500, "File type not allowed...");
 
-            $path = $request->mediafile->storeAs('predictions', $name);
+            $path = $request->mediafile->storeAs('predictions', $name.".".$extension);
             $the_file = new CURLFile(Storage::path($path));
 
             $headers = array(
