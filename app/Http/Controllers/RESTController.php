@@ -70,7 +70,7 @@ class RESTController extends Controller
     public function predict(Request $request)
     {
         if($request->hasFile("mediafile")){
-            $name = time().$request->file('mediafile')->getBasename();
+            $name = time().$request->file('mediafile')->getFilename();
             $extension = $request->mediafile->extension();
 
             if(!in_array($extension, ['wav', 'mp4']))
