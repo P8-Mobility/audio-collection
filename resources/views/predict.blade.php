@@ -15,7 +15,12 @@
         <div class="col-md-6 col-sm-12 col-xs-12">
             <div class="mb-3">
                 <label for="model" class="form-label">Model</label>
-                <input type="text" class="form-control" id="model" name="model" placeholder="default" value="">
+                <select class="form-select" id="model" name="model">
+                    <option value="" selected>Default</option>
+                    @foreach($models AS $model)
+                    <option value="{{ $model }}">{{ $model }}</option>
+                    @endforeach
+                </select>
             </div>
             <div id="controls">
                 <button id="recordButton">Record</button>

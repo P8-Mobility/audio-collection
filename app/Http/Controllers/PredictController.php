@@ -21,9 +21,6 @@ class PredictController extends Controller
 
         if(in_array($browser, ['Chrome', 'Edge', 'Safari'])){
             $models = $this->getModels();
-
-            var_dump($models);
-
             return view('predict', ['models' => $models]);
         }
 
