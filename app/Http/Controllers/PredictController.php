@@ -19,8 +19,13 @@ class PredictController extends Controller
         $agent = new Agent();
         $browser = $agent->browser();
 
-        if(in_array($browser, ['Chrome', 'Edge', 'Safari']))
-            return view('predict');
+        if(in_array($browser, ['Chrome', 'Edge', 'Safari'])){
+            $models = $this->getModels();
+
+            var_dump($models);
+
+            return view('predict', ['models' => $models]);
+        }
 
         return view('browser-support');
     }
@@ -69,5 +74,21 @@ class PredictController extends Controller
         }
 
         return "No file...";
+    }
+
+    private function getModels()
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_URL, "http://92.205.62.104:8080/models");
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        $obj = json_decode($result);
+
+        if($obj->status == "OK")
+            return $obj->result;
+
+        return [];
     }
 }
