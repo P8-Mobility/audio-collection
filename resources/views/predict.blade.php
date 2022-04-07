@@ -13,6 +13,10 @@
     <h1>Test the model</h1>
     <div class="row">
         <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="mb-3">
+                <label for="model" class="form-label">Model</label>
+                <input type="text" class="form-control" id="model" name="model" placeholder="default" value="">
+            </div>
             <div id="controls">
                 <button id="recordButton">Record</button>
             </div>
@@ -22,6 +26,10 @@
             <div id="result">
                 <h3>The model predicted:</h3>
                 <span id="phone"></span>
+                <br>
+
+                <h3>Model used:</h3>
+                <span id="used-model"></span>
             </div>
         </div>
     </div>
