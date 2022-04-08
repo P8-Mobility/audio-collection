@@ -41,6 +41,7 @@
                     <!--<button id="stopButton" disabled>Stop</button>-->
                 </div>
                 <p><small>Optagelsen stoppes automatisk efter 2 sekunder.</small></p>
+                <p><small>Unique ID: <code>{{ session()->get("token") }}</code></small></p>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
                 <div id="message-success" class="alert alert-success" role="alert" style="display: none;">
