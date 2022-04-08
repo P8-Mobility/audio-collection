@@ -32,8 +32,7 @@
                 <h3>The model predicted:</h3>
                 <span id="phone"></span>
                 <br>
-
-                <h3>Model used:</h3>
+                <h3 style="margin-top: 25px;">Model used:</h3>
                 <span id="used-model"></span>
             </div>
         </div>
