@@ -144,8 +144,10 @@ function predictRecording(blob) {
 
                 if(known_words[json['result']] !== undefined){
                     $('#p-word').text(known_words[json['result']]);
+                    $('#p-word').css("color", "black");
                 }else{
                     $('#p-word').text("Unknown");
+                    $('#p-word').css("color", "red");
                 }
             }
             //var json = JSON.parse(this.responseText);
