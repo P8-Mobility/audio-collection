@@ -32,7 +32,7 @@
                 <h3>Predicted phonemes:</h3>
                 <span id="phone"></span>
                 <br>
-                <h3>Predicted word:</h3>
+                <h3 style="margin-top: 25px;">Predicted word:</h3>
                 <span id="p-word"></span>
                 <br>
                 <h3 style="margin-top: 25px;">Model used:</h3>
