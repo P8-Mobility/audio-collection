@@ -30,7 +30,7 @@ var known_words = {
     "u ɤ t s æː l ə": "Udtale",
     "pʰ ɒ n i": "Pony",
     "pʰ u t e n": "Putin",
-    "æː ɐ": "Æer",
+    "æː ɐ": "Ære",
     "æ ɐ": "Er"
 };
 
