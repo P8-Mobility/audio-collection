@@ -29,8 +29,11 @@
         </div>
         <div class="col-md-6 col-sm-12 col-xs-12">
             <div id="result">
-                <h3>The model predicted:</h3>
+                <h3>Predicted phonemes:</h3>
                 <span id="phone"></span>
+                <br>
+                <h3>Predicted word:</h3>
+                <span id="p-word"></span>
                 <br>
                 <h3 style="margin-top: 25px;">Model used:</h3>
                 <span id="used-model"></span>

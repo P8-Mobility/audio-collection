@@ -20,6 +20,20 @@ recordButton.addEventListener("click", startRecordingClick);
 
 var recordingStopInterval = null;
 
+var known_words = {
+    "pʰ æː ɐ": "Pære",
+    "p æː ɐ": "Bære",
+    "l æː ɐ": "Lære",
+    "s k æː ɐ": "Skære",
+    "pʰ æː ɐ n ə": "Pærerne",
+    "p ɛ k ŋ": "Bækken",
+    "u ɤ t s æː l ə": "Udtale",
+    "pʰ ɒ n i": "Pony",
+    "pʰ u t e n": "Putin",
+    "æː ɐ": "Æer",
+    "æ ɐ": "Er"
+};
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -127,6 +141,10 @@ function predictRecording(blob) {
             if(json['status'] === 'OK') {
                 $('#phone').text(json['result']);
                 $('#used-model').text(json['model']);
+
+                if(known_words[json['result']] !== undefined){
+                    $('#p-word').text(known_words[json['result']]);
+                }
             }
             //var json = JSON.parse(this.responseText);
             //$('#result').html(json['result']);
