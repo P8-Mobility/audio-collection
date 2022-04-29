@@ -31,7 +31,9 @@ var known_words = {
     "pʰ ɒ n i": "Pony",
     "pʰ u t e n": "Putin",
     "æː ɐ": "Ære",
-    "æ ɐ": "Er"
+    "æ ɐ": "Er",
+    "m yː ɐ": "myre",
+    "m uː ɐ": "mure"
 };
 
 function sleep(ms) {
