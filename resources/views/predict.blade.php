@@ -24,10 +24,10 @@
             </div>
             <div class="mb-3">
                 <label for="word" class="form-label">Word</label>
+                @php var_dump($words); @endphp
                 <select class="form-select" id="word" name="word">
-                    @foreach($words AS $word)
-                    <option value="{{ $word }}">{{ $word }}</option>
-                    @endforeach
+
+                  
                 </select>
             </div>
             <div id="controls">
