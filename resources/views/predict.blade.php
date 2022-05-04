@@ -24,10 +24,9 @@
             </div>
             <div class="mb-3">
                 <label for="word" class="form-label">Word</label>
-                @php var_dump($words); @endphp
                 <select class="form-select" id="word" name="word">
                     @foreach($words AS $word => $phonemes)
-                        <option phonemes="{{ $phonemes }}" value="{{ $word }}">{{ $word }}</option>
+                    <option @if($word == "pære") selected @endif phonemes="{{ $phonemes }}" value="{{ $word }}">{{ $word }}</option>
                     @endforeach
                 </select>
             </div>
