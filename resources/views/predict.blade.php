@@ -37,14 +37,11 @@
         </div>
         <div class="col-md-6 col-sm-12 col-xs-12">
             <div id="result">
-                <h3>Predicted phonemes:</h3>
-                <span id="phone"></span>
-                <br>
-                <h3 style="margin-top: 25px;">Predicted word:</h3>
-                <span id="p-word"></span>
-                <br>
                 <h3 style="margin-top: 25px;">Model used:</h3>
                 <span id="used-model"></span>
+                <br>
+                <h3>Predicted phonemes:</h3>
+                <span id="phone"></span>
                 <br>
                 <h3 style="margin-top: 25px;">Response text (danish):</h3>
                 <span id="response-dan"></span>
