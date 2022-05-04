@@ -108,8 +108,8 @@ class PredictController extends Controller
         $obj = json_decode($result, true);
 
         if($obj["status"] == "OK"){
-            foreach ($obj['result'] AS $word){
-                var_dump($word[0]);
+            foreach ($obj['result'] AS $word => $phonemes){
+                var_dump($word);
             }
         }
 
