@@ -109,7 +109,7 @@ class PredictController extends Controller
 
         if($obj["status"] == "OK"){
             foreach ($obj['result'] AS $word => $phonemes){
-                var_dump($word);
+                var_dump($phonemes);
             }
         }
 
