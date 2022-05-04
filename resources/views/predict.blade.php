@@ -27,7 +27,7 @@
                 @php var_dump($words); @endphp
                 <select class="form-select" id="word" name="word">
 
-                  
+
                 </select>
             </div>
             <div id="controls">

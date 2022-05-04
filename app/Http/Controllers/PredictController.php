@@ -97,16 +97,24 @@ class PredictController extends Controller
 
     private function getWords()
     {
+        $words = array();
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_URL, "http://92.205.62.104:8080/words");
         $result = curl_exec($ch);
         curl_close($ch);
 
-        $obj = json_decode($result);
+        $obj = json_decode($result, true);
 
-        if($obj->status == "OK")
-            return $obj->result;
+        if($obj->status == "OK"){
+            return $obj['result'];
+//            foreach ($obj['result'] AS $item){
+//                $words[$item['word']] = $item[''];
+//            }
+        }
+
+
 
         return [];
     }
