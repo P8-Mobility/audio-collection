@@ -147,7 +147,7 @@ function predictRecording(blob) {
                 $('#response-ara').text(json['response_native_lang']);
 
                 if(known_words[json['result']] !== undefined){
-                    $('#p-word').text(known_words[json['result']]);
+                    $('#p-word').text(known_words[json['phonemes']]);
                     $('#p-word').css("color", "black");
                 }else{
                     $('#p-word').text("Unknown");
