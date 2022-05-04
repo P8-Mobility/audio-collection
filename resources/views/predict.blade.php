@@ -26,7 +26,7 @@
                 <label for="word" class="form-label">Word</label>
                 <select class="form-select" id="word" name="word">
                     @foreach($words AS $word => $phonemes)
-                    <option @if($word == "pære") selected @endif phonemes="{{ $phonemes }}" value="{{ $word }}">{{ $word }}</option>
+                    <option @if($word == "pære") selected @endif phonemes="{{ $phonemes }}" value="{{ $word }}">{{ $word }} ({{ $phonemes }})</option>
                     @endforeach
                 </select>
             </div>
