@@ -108,13 +108,12 @@ class PredictController extends Controller
         $obj = json_decode($result, true);
 
         if($obj["status"] == "OK"){
+            foreach ($obj['result'] AS $word => $phonemes){
+                $words[$word[0]] = $phonemes;
+            }
+
             return $obj['result'];
-//            foreach ($obj['result'] AS $item){
-//                $words[$item['word']] = $item[''];
-//            }
         }
-
-
 
         return [];
     }
