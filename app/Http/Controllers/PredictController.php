@@ -21,7 +21,12 @@ class PredictController extends Controller
 
         if(in_array($browser, ['Chrome', 'Edge', 'Safari'])){
             $models = $this->getModels();
-            return view('predict', ['models' => $models]);
+            $words = $this->getWords();
+
+            return view('predict', [
+                'models' => $models,
+                'words' => $words
+            ]);
         }
 
         return view('browser-support');
@@ -44,8 +49,9 @@ class PredictController extends Controller
             );
 
             $data = array(
-                "file" => $the_file,
-                "model" => $request->input("model", "")
+                "file"  => $the_file,
+                "model" => $request->input("model", ""),
+                "word"  => $request->input("word")
             );
 
             $curl = curl_init();
@@ -78,6 +84,22 @@ class PredictController extends Controller
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_URL, "http://92.205.62.104:8080/models");
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        $obj = json_decode($result);
+
+        if($obj->status == "OK")
+            return $obj->result;
+
+        return [];
+    }
+
+    private function getWords()
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_URL, "http://92.205.62.104:8080/words");
         $result = curl_exec($ch);
         curl_close($ch);
 

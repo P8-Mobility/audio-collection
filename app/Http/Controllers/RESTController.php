@@ -85,7 +85,8 @@ class RESTController extends Controller
 
             $data = array(
                 "file" => $the_file,
-                "model" => $request->input("model", "")
+                "model" => $request->input("model", ""),
+                "word"  => $request->input("word")
             );
 
             $curl = curl_init();

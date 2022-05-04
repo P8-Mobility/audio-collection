@@ -22,6 +22,14 @@
                     @endforeach
                 </select>
             </div>
+            <div class="mb-3">
+                <label for="word" class="form-label">Word</label>
+                <select class="form-select" id="word" name="word">
+                    @foreach($words AS $word)
+                    <option value="{{ $word }}">{{ $word }}</option>
+                    @endforeach
+                </select>
+            </div>
             <div id="controls">
                 <button id="recordButton">Record</button>
             </div>
@@ -37,6 +45,12 @@
                 <br>
                 <h3 style="margin-top: 25px;">Model used:</h3>
                 <span id="used-model"></span>
+                <br>
+                <h3 style="margin-top: 25px;">Response text (danish):</h3>
+                <span id="response-dan"></span>
+                <br>
+                <h3 style="margin-top: 25px;">Response text (arabic):</h3>
+                <span id="response-ara"></span>
             </div>
         </div>
     </div>
