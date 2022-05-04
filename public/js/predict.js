@@ -143,6 +143,8 @@ function predictRecording(blob) {
             if(json['status'] === 'OK') {
                 $('#phone').text(json['phonemes']);
                 $('#used-model').text(json['model']);
+                $('#response-dan').text(json['response_target_lang']);
+                $('#response-ara').text(json['response_native_lang']);
 
                 if(known_words[json['result']] !== undefined){
                     $('#p-word').text(known_words[json['result']]);
