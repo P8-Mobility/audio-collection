@@ -141,7 +141,7 @@ function predictRecording(blob) {
             var json = JSON.parse(this.responseText);
 
             if(json['status'] === 'OK') {
-                $('#phone').text(json['result']);
+                $('#phone').text(json['phonemes']);
                 $('#used-model').text(json['model']);
 
                 if(known_words[json['result']] !== undefined){
@@ -168,6 +168,7 @@ function predictRecording(blob) {
     var fd=new FormData();
     fd.append("mediafile", blob, filename);
     fd.append("model", $('#model').val());
+    fd.append("word", $('#word').val());
     xhr.open("POST","/predict",true);
     xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
     xhr.send(fd);
