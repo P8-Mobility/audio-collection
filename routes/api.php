@@ -18,4 +18,5 @@ use \App\Http\Controllers\RESTController;
 Route::middleware('valid.token')->group(function () {
     Route::get('download', [RESTController::class, 'download']);
     Route::post('predict', [RESTController::class, 'predict']);
+    Route::get('words',    [RESTController::class, 'words']);
 });

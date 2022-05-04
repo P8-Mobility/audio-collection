@@ -112,4 +112,19 @@ class RESTController extends Controller
 
         return "No file...";
     }
+
+    public function words(Request $request)
+    {
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "http://92.205.62.104:8080/words",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 30
+        ));
+
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+        return $response;
+    }
 }
