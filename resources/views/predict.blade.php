@@ -47,7 +47,7 @@
                 <span id="response-dan"></span>
                 <br>
                 <h3 style="margin-top: 25px;">Response text (arabic):</h3>
-                <span id="response-ara"></span>
+                <span id="response-ara" style="direction: rtl;"></span>
             </div>
         </div>
     </div>
